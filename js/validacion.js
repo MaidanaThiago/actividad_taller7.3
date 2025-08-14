@@ -58,7 +58,7 @@ document.getElementById('regBtn').addEventListener('click', function() {
     if (!validarTerminos()) {
         document.getElementById('terminos').classList.add('is-invalid');
         return;
-    } if (validarLargo() && validarPassword() && sinCamposVacios()) {
+    } if (validarLargo() && validarPassword() && sinCamposVacios() && validarTerminos()) {
         showAlertSuccess();
     } else {
         showAlertError();
