@@ -48,3 +48,19 @@ document.getElementById("regBtn").addEventListener("click", function() {
       showAlertError() 
    }
 });
+
+function validarTerminos() {
+    const checkbox = document.getElementById('terminos');
+    return checkbox.checked;
+}
+
+document.getElementById('regBtn').addEventListener('click', function() {
+    if (!validarTerminos()) {
+        document.getElementById('terminos').classList.add('is-invalid');
+        return;
+    } if (validarLargo() && validarPassword() && sinCamposVacios()) {
+        showAlertSuccess();
+    } else {
+        showAlertError();
+    }
+});
