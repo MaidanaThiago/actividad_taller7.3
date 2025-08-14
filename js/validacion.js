@@ -21,8 +21,6 @@ function sinCamposVacios(){
     }
 }
 
-elBoton.addEventListener("click", sinCamposVacios);
-
 function validarPassword(){
 
     if(elPassword.value === elPasswordRepetido.value){
@@ -41,26 +39,15 @@ function validarLargo (){
    }
 }
 
-document.getElementById("regBtn").addEventListener("click", function() {
-   if (validarLargo() && validarPassword() && sinCamposVacios()){
-      showAlertSuccess();
-   } else {
-      showAlertError() 
-   }
-});
-
 function validarTerminos() {
     const checkbox = document.getElementById('terminos');
     return checkbox.checked;
 }
 
-document.getElementById('regBtn').addEventListener('click', function() {
-    if (!validarTerminos()) {
-        document.getElementById('terminos').classList.add('is-invalid');
-        return;
-    } if (validarLargo() && validarPassword() && sinCamposVacios()) {
-        showAlertSuccess();
-    } else {
-        showAlertError();
-    }
+document.getElementById("regBtn").addEventListener("click", function() {
+   if (validarLargo() && validarPassword() && sinCamposVacios() && validarTerminos()){
+      showAlertSuccess();
+   } else {
+      showAlertError() 
+   }
 });
